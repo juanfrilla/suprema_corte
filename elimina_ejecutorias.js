@@ -22,9 +22,9 @@ function eliminar_ejecutoria(_id_ejecutoria) {
 }
 
 ejecutorias_duplicadas_en_nuestra_bdd.forEach(function(_id_duplicado, index) {
-    console.log(`Procesando: ${index}/${ejecutorias_duplicadas_en_nuestra_bdd.length}`); // console.log the index
+    console.log("Procesando: "+ index + "/" + ejecutorias_duplicadas_en_nuestra_bdd.length); // console.log the index
     
-    console.log(`_id duplicado: ${_id_duplicado}`);//console.log the current item
+    console.log("_id duplicado: "+ _id_duplicado);//console.log the current item
     
     docid = get_docid(_id_duplicado);
     total = contar_documentos_for_ejecutoria(docid);
