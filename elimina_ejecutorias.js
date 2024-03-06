@@ -1,7 +1,7 @@
-console.log('')
-console.log('---------------------------------------------------------------------------')
-console.log('EJECUTANDO')
-console.log('');
+print('')
+print('---------------------------------------------------------------------------')
+print('EJECUTANDO')
+print('');
 
 var db = db.getSiblingDB('tolmexscr');
 const modulo_origen = "EjecutoriasSupremaCorte";
@@ -18,13 +18,13 @@ function contar_documentos_for_ejecutoria(docid) {
 
 function eliminar_ejecutoria(_id_ejecutoria) {
     var result = db.documents.remove({_id: _id_ejecutoria, "modulo_origen": modulo_origen});
-    console.log('Eliminando ejecutoria: ', _id_ejecutoria, ' Resultado: ', result);
+    print('Eliminando ejecutoria: ', _id_ejecutoria, ' Resultado: ', result);
 }
 
 ejecutorias_duplicadas_en_nuestra_bdd.forEach(function(_id_duplicado, index) {
-    console.log("Procesando: "+ index + "/" + ejecutorias_duplicadas_en_nuestra_bdd.length); // console.log the index
+    print("Procesando: "+ index + "/" + ejecutorias_duplicadas_en_nuestra_bdd.length); // print the index
     
-    console.log("_id duplicado: "+ _id_duplicado);//console.log the current item
+    print("_id duplicado: "+ _id_duplicado);//print the current item
     
     docid = get_docid(_id_duplicado);
     total = contar_documentos_for_ejecutoria(docid);
@@ -34,4 +34,4 @@ ejecutorias_duplicadas_en_nuestra_bdd.forEach(function(_id_duplicado, index) {
     }
 });
 
-console.log('FINALIZADO');
+print('FINALIZADO');
