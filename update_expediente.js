@@ -10,7 +10,7 @@ var expedientes_sin_migrar_en_nuestra_bdd = ['3561201d1b1158948b89c54cd869ddb6',
 
 function actualizar_expediente(_id_expediente) {
     var result = db.documents.update(
-        {_id: _id_ejecutoria, "modulo_origen": modulo_origen}, 
+        {_id: _id_expediente, "modulo_origen": modulo_origen}, 
         {$set: {updated_at: new Date(Date.now() + 60 * 60 * 1000)}}
     );
     print('Actualizando expediente: ', _id_expediente, ' Resultado: ', result);
