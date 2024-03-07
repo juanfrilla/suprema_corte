@@ -23,10 +23,8 @@ ejecutorias_sin_migrar_en_nuestra_bdd.forEach(function(_id_sin_migrar, index) {
     print("Procesando: "+ index + "/" + ejecutorias_sin_migrar_en_nuestra_bdd.length); // print the index
     
     print("_id duplicado: "+ _id_sin_migrar);//print the current item
-    
-    if (total > 1) {
-        actualizar_ejecutoria(_id_sin_migrar);
-    }
+
+    actualizar_ejecutoria(_id_sin_migrar);
 });
 
 print('FINALIZADO');
