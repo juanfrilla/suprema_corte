@@ -15,7 +15,10 @@ function contar_documentos_for_ejecutoria(docid) {
 }
 
 function actualizar_ejecutoria(_id_ejecutoria) {
-    var result = db.documents.update({_id: _id_ejecutoria, "modulo_origen": modulo_origen}, {$set: {updated_at: new Date()}});
+    var result = db.documents.update(
+        {_id: _id_ejecutoria, "modulo_origen": modulo_origen}, 
+        {$set: {updated_at: new Date(Date.now() + 60 * 60 * 1000)}}
+    );
     print('Actualizando ejecutoria: ', _id_ejecutoria, ' Resultado: ', result);
 }
 
